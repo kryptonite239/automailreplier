@@ -130,9 +130,9 @@ app.get("/", async (req, res) => {
     }, Math.floor(Math.random() * (120 - 45 + 1) + 45) * 1000);
   }
   main().catch(console.error);
-  res.send("You have successfully subscribed to our service");
+  res.send("Thank You For Using Auto Mail Replier!!");
 });
 
-app.listen(port,()=>{
+app.listen(port, () => {
   console.log(`AutoReplier app listening at http://localhost:${port}`);
-})
+});
