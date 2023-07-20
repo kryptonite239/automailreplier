@@ -32,17 +32,6 @@ npm install
    - Follow the instructions in the Google Developers Guide (link above) to create a project and enable the Gmail API.
    - Download the `credentials.json` file and save it in the root directory of the application.
 
-4. Configure the auto-reply message and label:
-
-   Open `config.js` and update the following fields:
-   
-   ```javascript
-   module.exports = {
-       replyMessage: 'Your auto-reply message goes here.',
-       labelName: 'Name of the label to categorize auto-replied emails',
-   };
-   ```
-
 ## Usage
 
 Run the application using the following command:
@@ -53,7 +42,14 @@ node index.js
 
 When you run the application for the first time, it will prompt you to authorize access to your Gmail account. Follow the provided URL, grant access, and copy the authorization code back into the terminal.
 
-The application will start listening for new emails in your Gmail inbox. When it finds a new email, it will automatically reply to the sender with the specified auto-reply message and add the email to the designated label.
+The application will start listening for new emails in your Gmail inbox. When it finds a new email, it will automatically reply to the sender with a default auto-reply message and add the email to a new label named "Auto-Replied."
+
+You can modify the auto-reply message and label name directly in the `index.js` file if needed:
+
+```javascript
+const replyMessage = 'Your auto-reply message goes here.';
+const labelName = 'Auto-Replied';
+```
 
 ## Limitations and Considerations
 
